@@ -1,8 +1,6 @@
 
 # ECG Viewer & Analyzer (Streamlit App)
 
-Este repositorio implementa la app final para visualizar y analizar ECGs (O1 y O2).
-
 ## 📂 Estructura
 
 ```
@@ -26,6 +24,19 @@ ecg-app/
 ```bash
 pip install -r requirements.txt
 streamlit run app.py
+```
+
+## Serialización e indexado
+Recuerda que si tienes un dataset que tiene .hea o .mat, serializarlo a .npz
+e indexarlos a .csv para volver más ligero el repositorio.
+
+```bash
+Serialización:
+python prepare_slices_patch.py --raw_dir ["dirección archivo de entrada"] --out_dir ["dirección archivo de salida"] --lead II --win_s 8 --fs_out 500 --max_segments 0
+Ejemplo: python prepare_slices_patch.py --raw_dir "data\raw\WFDBRecords\02" --out_dir "data\slices\g02" --lead II --win_s 8 --fs_out 500 --max_segments 0
+Indexado:
+python build_index_from_npz.py --src SRC [--out OUT] [--seg-window SEG_WINDOW] [--seg-step SEG_STEP]
+Ejemplo: python build_index_from_npz.py --src data/ --out data/index.csv
 ```
 
 - Coloca tus `.npz` en `data/`.
