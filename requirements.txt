@@ -7,4 +7,4 @@ scipy>=1.13
 neurokit2>=0.2.7
 wfdb>=4.1.2
 plotly>=5.22
-
+tqdm>=4.66
