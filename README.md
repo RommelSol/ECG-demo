@@ -42,7 +42,7 @@ Ejemplo: python build_index_from_npz.py --src data/ --out data/index.csv
 - Coloca tus `.npz` en `data/`.
 - Genera/actualiza el índice con:
 ```bash
-python scripts/build_index.py --src data/ --out data/index.csv
+python scripts/build_index_from_npz.py --src data/ --out data/index.csv
 ```
 
 ## ☁️ Streamlit Cloud
